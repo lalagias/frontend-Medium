@@ -1,29 +1,34 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class PostDetail extends Component {
     constructor() {
         super();
         this.state = {
-          author: 'mocca',
-          title: '9 Tricks for Kickass JavaScript Developers in 2019',
-          description: 'Kalispera',
-          text: 'Yet another year is over and JavaScript is ever changin',
-          created_date: '2019-01-27',
-          published_date: '2019-01-27',
-          tags: 'JavaScript',
+            post: [],
+        //   author
+        //   title
+        //   description
+        //   text
+        //   created_date
+        //   published_date
         }
       }
 
-    
+    componentDidMount() {
+        axios.get('http://localhost:8000/posts/1/').then(res => {
+            this.setState({ post: res.data });
+            console.log(res.data)});
+    }
+
     render() {
         return(
             <div className="postDetail">
-                <span className="title">{ this.state.title }</span>
-                <span className="author">{ this.state.author }</span>
-                <span className="description">{ this.state.description }</span>
-                <span className="text">{ this.state.text }</span>
-                <span className="created_date">{ this.state.created_date }</span>
-                <span className="tag">{ this.state.tag }</span>
+                <span className="title">{ this.state.post.title }</span>
+                <span className="author">{ this.state.post.author }</span>
+                <span className="description">{ this.state.post.description }</span>
+                <span className="text">{ this.state.post.text }</span>
+                <span className="created_date">{ this.state.post.created_date }</span>
             </div>
         );
     }
