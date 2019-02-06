@@ -1,16 +1,110 @@
+@font-face {
+    font-family: antiqua;
+    src: url(c:\windows\fonts\book-antiqua\BKANT.TTF);
+}
+
 body {
+    font-family: antiqua;
     margin: 0;
     padding: 0;
     font-size: 14px;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-        ". postDetail .";
+/* HEADER */
+h1 {
+    padding-top: 2%;
+    margin: 0;
 }
 
+.header {
+    background-color: #E8F3EC;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+/* CONTAINER */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 40%;
+    grid-template-areas: 
+        ". welcome ."
+        ". buttons .";
+}
+
+.welcome {
+    margin-top: 15%;
+    grid-area: welcome;
+    display: block;
+    /* margin: 15% auto; */
+    text-align: center;
+    font-size: 2em;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 5%;
+    grid-template-areas: 
+        ". login ."
+        ". or ."
+        ". signup .";
+}
+
+.logIn {
+    grid-area: login;
+    display: block;
+    border:2px solid #3DAE5F;
+    border-radius: 9px;
+    background-color: transparent;
+    color: #3DAE5F;
+    font-size: 1.5em;
+}
+
+.logIn:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 10px 45px 0px rgba(120,120,120,1);
+    -moz-box-shadow: 0px 10px 45px 0px rgba(120,120,120,1);
+    box-shadow: 0px 10px 45px 0px rgba(120,120,120,1);
+}
+
+.logIn:focus {
+    outline: 0;
+}
+
+.or {
+    grid-area: or;
+    text-align: center;
+    font-size: 2em;
+    color: grey;
+    margin-top: 12%;
+}
+
+.signUp {
+    grid-area: signup;
+    display: block;
+    border:2px solid #3DAE5F;
+    border-radius: 9px;
+    background-color: transparent;
+    color: #3DAE5F;
+    font-size: 1.5em;
+}
+
+.signUp:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0px 10px 45px 0px rgba(120,120,120,1);
+    -moz-box-shadow: 0px 10px 45px 0px rgba(120,120,120,1);
+    box-shadow: 0px 10px 45px 0px rgba(120,120,120,1);
+}
+
+.signUp:focus {
+    outline: 0;
+}
+
+/* POST DETAIL STYLE */
 .postDetail {
     grid-area: postDetail;
     display: grid;
