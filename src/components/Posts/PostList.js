@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PostList extends Component {
-  
+import PostPreview from './PostPreview';
 
+function PostList(props) {
 
-  render() {
-    return (
-      <div className="PostList">
-        
-      </div>
-    );
-  }
+  return (
+    <div className="PostList">
+      { props.posts.map(c => <PostPreview key={c.title} author={c.author} />) }
+    </div>
+  );
 }
 
 export default PostList;
