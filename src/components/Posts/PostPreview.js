@@ -10,7 +10,7 @@ function PostPreview(props) {
       <p>{props.description}</p>
       {/* <p>{props.text}</p> */}
       <p>{props.created_date}</p>
-      <img class="profileImage" src={images}></img>
+      <img class="profileImage" src={images} alt=""></img>
     </div>
   );    
 }

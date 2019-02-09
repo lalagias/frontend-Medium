@@ -11,8 +11,14 @@
 * Editor component
 * ArticleView component
 * SignInWith component
-* FollowButton component
 * Profile component
+
+## TODOs:
+
+* onClick event in PostPreview to redirect you to the PostDetail
+* CSS changes
+* Log In form
+* Sign Up form
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

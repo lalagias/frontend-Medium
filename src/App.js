@@ -14,9 +14,13 @@ import PostList from './components/Posts/PostList';
 import PostPreview from './components/Posts/PostPreview';
 
 class App extends Component {
-  state = {
-    posts: [],
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      posts: [],
+    }
+  }
   
   componentDidMount() {
     axios
