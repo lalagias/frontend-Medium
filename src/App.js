@@ -13,14 +13,6 @@ import PostDetail from './components/Posts/PostDetail';
 import PostList from './components/Posts/PostList';
 import PostPreview from './components/Posts/PostPreview';
 
-const posts = [
-  { id: 1, author: "Leanne Graham" },
-  { id: 2, author: "Ervin Howell" },
-  { id: 3, author: "Clementine Bauch" },
-  { id: 4, author: "Patricia Lebsack" }
-];
-
-
 class App extends Component {
   state = {
     posts: [],
@@ -33,9 +25,15 @@ class App extends Component {
 
       // create an array of posts only with relevant data
       const newPosts = res.data.map(element => {
+        
+        
         return {
+          id: element.id,
           author: element.author,
           title: element.title,
+          description: element.description,
+          text: element.text,
+          created_date: element.created_date,
         };
       });
 

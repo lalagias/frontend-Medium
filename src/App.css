@@ -122,6 +122,38 @@ li {
     outline: 0;
 }
 
+/* POST LIST STYLE */
+.PostList {
+    /* display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 5%;
+    grid-template-areas:
+            ". item1 ."
+            ". item2 ."
+            ". item3 ."
+            ". item4 ."
+            ". item5 ."; */
+}
+
+/* POST PREVIEW STYLE */
+.PostPreview {
+    display: block;
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+
+.PostPreview:hover {
+    cursor: pointer;
+}
+
+.profileImage {
+    width: 10%;
+    height: auto;
+}
+
 /* POST DETAIL STYLE */
 .postDetail {
     grid-area: postDetail;
