@@ -24,20 +24,41 @@ h1 {
 }
 
 /* NAVBAR */
+.heading {
+    float: left;
+    padding-left: 5%;
+    padding-top: 1.5%;
+}
+
 .navbar {
     background-color: #E8F3EC;
+    text-align: center;
+    padding-bottom: 5%;
+    /* height: 120%; */
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style:none;
+    padding:0;
+    padding-right: 3%;
+    margin:0;
+    text-decoration: none;
 }
 
 li {
+    margin: 2%;
     display: block;
-    text-decoration: none;
     float: right;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.active {
+    border-bottom: 2px solid #3DAE5F;
 }
 
 

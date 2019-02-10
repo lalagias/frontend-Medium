@@ -3,11 +3,11 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className="header">
-      <h1>Medium</h1>
-      {/* <Link to="/">Home</Link>
-      <Link to="/about">about</Link> */}
-    </header>
+    <React.Fragment>
+      <header className="header">
+        <h1>Medium</h1>
+      </header>
+    </React.Fragment>
   )
 }
 

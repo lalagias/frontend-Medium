@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // Fragments
 import Header from './components/layout/Header';
-// import Navbar from './components/layout/Navbar';
+import Navbar from './components/layout/Navbar';
 // import Welcome from './components/layout/Welcome';
 
 // Components
@@ -34,12 +34,14 @@ class App extends Component {
         return {
           id: element.id,
           author: element.author,
+          image: element.image,
           title: element.title,
           description: element.description,
           text: element.text,
           created_date: element.created_date,
         };
       });
+
 
       // create a new "State" object without mutating 
       // the original State object.
@@ -49,9 +51,6 @@ class App extends Component {
 
       // store the new state object in the component's state
       this.setState(newState);
-
-          // this.setState({ posts: res.data });
-          // console.log(res.data);
     })
     .catch(error => {
       console.log(error);
@@ -60,19 +59,17 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      // <Router>
         <div className="App">
-        <Header />
-        {/* <Navbar /> */}
-        {/* <Route exact path="/"> */}
-          {/* <div className="container"> */}
-            {/* <Welcome /> */}
-            {/* <PostDetail /> */}
-            <PostList posts={ this.state.posts } />
-          {/* </div> */}
+        {/* <Route exact path="/" component={Header}> */}
+          {/* <Header /> */}
+        {/* </Route> */}
+        {/* <Route exact path="/Home"> */}
+          <Navbar />
+          <PostList posts={ this.state.posts } />
         {/* </Route> */}
         </div>
-      </Router>
+      // </Router>
     );
   }
 }

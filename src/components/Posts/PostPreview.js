@@ -4,7 +4,7 @@ function PostPreview(props) {
   let images = `${props.image}`
 
   return (
-    <div className="PostPreview" id={props.key}>
+    <div className="PostPreview" id={props.id}>
       <div className="previewDetail">
         <img className="profileImage" src={images} alt=""></img>
         <span className="author">{props.author}</span>
