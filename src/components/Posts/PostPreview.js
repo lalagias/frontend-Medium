@@ -5,12 +5,13 @@ function PostPreview(props) {
 
   return (
     <div className="PostPreview" id={props.key}>
-      <h1>{props.title}</h1>
-      <p>{props.author}</p>
-      <p>{props.description}</p>
-      {/* <p>{props.text}</p> */}
-      <p>{props.created_date}</p>
-      <img class="profileImage" src={images} alt=""></img>
+      <div className="previewDetail">
+        <img className="profileImage" src={images} alt=""></img>
+        <span className="author">{props.author}</span>
+        <span className="date">{props.created_date}</span>
+      </div>      
+      <span className="title"><h1>{props.title}</h1></span>
+      <span className="description">{props.description}</span>
     </div>
   );    
 }
