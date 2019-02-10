@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 
 // Fragments
 import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
-// import Welcome from './components/layout/Welcome';
+import Welcome from './components/layout/Welcome';
 
 // Components
 import PostDetail from './components/Posts/PostDetail';
@@ -59,17 +59,29 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
+      <Router>
         <div className="App">
         {/* <Route exact path="/" component={Header}> */}
           {/* <Header /> */}
         {/* </Route> */}
-        {/* <Route exact path="/Home"> */}
-          <Navbar />
-          <PostList posts={ this.state.posts } />
-        {/* </Route> */}
+          
+          {/* <PostList posts={ this.state.posts } /> */}
+          <Switch>
+            <Route exact path="/" render={props => 
+                  <div>
+                    <Header />
+                    <Welcome />
+                  </div>
+            } />
+            <Route exact path="/Home" render={props => 
+                  <div>
+                    <Navbar />
+                    <PostList posts={ this.state.posts } />
+                  </div>
+            } />
+          </Switch>
         </div>
-      // </Router>
+      </Router>
     );
   }
 }
