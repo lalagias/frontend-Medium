@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import { Link } from 'react-router-dom';
 
 function Header() {
@@ -8,7 +8,7 @@ function Header() {
         <h1>Medium</h1>
       </header>
     </React.Fragment>
-  )
+  );
 }
 
 export default Header;
