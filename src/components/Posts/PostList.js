@@ -10,8 +10,9 @@ function PostList(props) {
           key={c.id}
           id={c.id}
           title={c.title}
+          postImage={c.image}
           author={c.author.username}
-          image={c.author.image}
+          profileImage={c.author.image}
           description={c.description}
           text={c.text}
           created_date={c.created_date}

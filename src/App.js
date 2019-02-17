@@ -12,6 +12,7 @@ import Welcome from "./components/layout/Welcome";
 import PostDetail from "./components/Posts/PostDetail";
 import PostList from "./components/Posts/PostList";
 import PostPreview from "./components/Posts/PostPreview";
+import AddPost from "./components/Posts/AddPost";
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +36,8 @@ class App extends Component {
             title: element.title,
             description: element.description,
             text: element.text,
-            created_date: element.created_date
+            created_date: element.created_date,
+            postImage: element.postImage
           };
         });
 
@@ -54,6 +56,11 @@ class App extends Component {
   }
 
   render() {
+    // const { posts } = this.state;
+    // const postList = posts.length ? () : (
+    //   <div className
+    // )
+
     return (
       <Router>
         <div className="App">
@@ -63,8 +70,9 @@ class App extends Component {
               path="/"
               render={props => (
                 <div>
-                  <Header />
-                  <Welcome />
+                  {/* <Header />
+                  <Welcome /> */}
+                  <AddPost />
                 </div>
               )}
             />
@@ -75,6 +83,16 @@ class App extends Component {
                 <div>
                   <Navbar />
                   <PostList posts={this.state.posts} />
+                </div>
+              )}
+            />
+            <Route
+              exact
+              path="/Post"
+              render={props => (
+                <div>
+                  <Navbar />
+                  <PostDetail posts={this.state.posts} />
                 </div>
               )}
             />
