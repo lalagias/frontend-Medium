@@ -70,9 +70,8 @@ class App extends Component {
               path="/"
               render={props => (
                 <div>
-                  {/* <Header />
-                  <Welcome /> */}
-                  <AddPost />
+                  <Header />
+                  <Welcome />
                 </div>
               )}
             />
@@ -93,6 +92,16 @@ class App extends Component {
                 <div>
                   <Navbar />
                   <PostDetail posts={this.state.posts} />
+                </div>
+              )}
+            />
+            <Route
+              exact
+              path="/writePost"
+              render={props => (
+                <div>
+                  <Navbar />
+                  <AddPost />
                 </div>
               )}
             />

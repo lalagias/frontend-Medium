@@ -283,3 +283,76 @@ a {
     font-size: 1em;
     text-align: right;
 } */
+
+/* WRITE A POST */
+.writePost {
+  width: 80%;
+  margin: 5% auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: ". form .";
+}
+
+.formPost {
+  grid-area: form;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". titleWrite ."
+    ". imageWrite ."
+    ". bodyWrite ."
+    ". submit .";
+  grid-row-gap: 35%;
+}
+
+.titleWrite {
+  grid-area: titleWrite;
+}
+
+.imageWrite {
+  grid-area: imageWrite;
+}
+
+.bodyWrite {
+  grid-area: bodyWrite;
+}
+
+form input[type="text"] {
+  background-color: transparent;
+  border: 0 solid transparent;
+  border-bottom: 2px solid #3dae5f;
+  width: 100%;
+  font-size: 2em;
+}
+
+form input[type="text"]:hover {
+  outline: none;
+}
+
+form input[type="file"] {
+  margin: 0 auto;
+  background-color: transparent;
+  border: 0 solid transparent;
+}
+
+textarea {
+  outline: none;
+  border: 0 solid transparent;
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+}
+
+.submit {
+  margin: 0 auto;
+  grid-area: submit;
+  width: 15%;
+  border: 2px solid #3dae5f;
+  border-radius: 5%;
+  background-color: transparent;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  cursor: pointer;
+}

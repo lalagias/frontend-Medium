@@ -6,60 +6,47 @@ class AddPost extends Component {
     super(props);
 
     this.state = {
-      editorState: EditorState.createEmpty()
+      title: null,
+      image: null,
+      body: null
     };
   }
 
-  onChange = editorState => {
+  handleChange = e => {
     this.setState({
-      editorState
+      [e.target.id]: e.target.value
     });
   };
 
-  handleKeyCommand = command => {
-    const newState = RichUtils.handleKeyCommand(
-      this.state.editorState,
-      command
-    );
-    if (newState) {
-      this.onChange(newState);
-      return "handled";
-    }
-    return "not-handled";
-  };
-
-  onUnderlineClick = () => {
-    this.onChange(
-      RichUtils.toggleInlineStyle(this.state.editorState, "UNDERLINE")
-    );
-  };
-
-  onBoldClick = () => {
-    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, "BOLD"));
-  };
-
-  onItalicClick = () => {
-    this.onChange(
-      RichUtils.toggleInlineStyle(this.state.editorState, "ITALIC")
-    );
-  };
   render() {
     return (
-      <div className="editorContainer">
-        <button onClick={this.onUnderlineClick}>U</button>
-        <button onClick={this.onBoldClick}>
-          <b>B</b>
-        </button>
-        <button onClick={this.onItalicClick}>
-          <em>I</em>
-        </button>{" "}
-        <div className="editors">
-          <Editor
-            editorState={this.state.editorState}
-            handleKeyCommand={this.handleKeyCommand}
-            onChange={this.onChange}
+      <div className="writePost">
+        <form className="formPost">
+          <input
+            className="titleWrite"
+            type="text"
+            id="title"
+            placeholder="Title..."
+            onChange={this.handleChange}
+            required
           />
-        </div>
+          <input
+            className="imageWrite"
+            type="file"
+            alt="Upload Image"
+            id="image"
+            accept="image/png, image/jpeg, image/gif"
+            onChange={this.handleChange}
+          />
+          <textarea
+            className="bodyWrite"
+            id="body"
+            placeholder="Tell your story..."
+            onChange={this.handleChange}
+            required
+          />
+          <button className="submit">Submit</button>
+        </form>
       </div>
     );
   }
