@@ -1,4 +1,5 @@
 import React from "react";
+// import moment from "moment";
 
 function PostPreview(props) {
   let profileImage = `${props.profileImage}`;
@@ -9,7 +10,10 @@ function PostPreview(props) {
       <div className="previewDetail">
         <img className="profileImage" src={profileImage} alt="" />
         <span className="author">{props.author}</span>
-        <span className="date">{props.created_date}</span>
+        <span className="date">
+          {props.created_date}
+          {/* {moment(, moment.ISO_8601)} */}
+        </span>
       </div>
       <span className="title">
         <h1>{props.title}</h1>

@@ -11,8 +11,9 @@ import Welcome from "./components/layout/Welcome";
 // Components
 import PostDetail from "./components/Posts/PostDetail";
 import PostList from "./components/Posts/PostList";
-import PostPreview from "./components/Posts/PostPreview";
+// import PostPreview from "./components/Posts/PostPreview";
 import AddPost from "./components/Posts/AddPost";
+import Login from "./components/Auth/Login";
 
 class App extends Component {
   constructor(props) {
@@ -72,6 +73,17 @@ class App extends Component {
                 <div>
                   <Header />
                   <Welcome />
+                </div>
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              render={props => (
+                <div>
+                  <Header />
+                  <Welcome />
+                  <Login />
                 </div>
               )}
             />

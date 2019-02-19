@@ -144,8 +144,8 @@ a {
 }
 
 /* POST LIST STYLE */
-.PostList {
-  /* display: grid;
+/* .PostList {
+   display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 5%;
     grid-template-areas:
@@ -153,8 +153,8 @@ a {
             ". item2 ."
             ". item3 ."
             ". item4 ."
-            ". item5 ."; */
-}
+            ". item5 ."; 
+} */
 
 /* POST PREVIEW STYLE */
 .PostPreview {
@@ -355,4 +355,109 @@ textarea {
   padding-top: 1%;
   padding-bottom: 1%;
   cursor: pointer;
+}
+
+/* LOG IN */
+.loginModal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: grid; /* Hidden by default */
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-areas: ". loginPanel .";
+}
+
+.loginPanel {
+  grid-area: loginPanel;
+  border: 2px solid lightgrey;
+  background-color: white;
+  max-height: 50%;
+}
+
+.loginHeader {
+  background-color: #e8f3ec;
+  height: 100px;
+  display: grid;
+  grid-template-areas: ". welcome close";
+}
+
+.close {
+  font-size: 2em;
+  grid-area: close;
+  color: grey;
+  cursor: pointer;
+  text-align: right;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.headerLogin {
+  margin-top: 8%;
+  grid-area: welcome;
+  text-align: center;
+}
+
+.loginForm {
+  margin-top: 10%;
+  display: grid;
+  grid-row-gap: 60%;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-areas: "usernameLabel usernameInput ." "passwordLabel passwordInput ." ". submitLogin .";
+}
+
+.username,
+.password {
+  background-color: transparent;
+  border: 0 solid transparent;
+  border-bottom: 2px solid #3dae5f;
+  width: 100%;
+  font-size: 2em !important;
+}
+
+.username:focus,
+.password:focus {
+  outline: none;
+}
+
+.usernameLabel {
+  margin-left: 8%;
+  grid-area: usernameLabel;
+  font-size: 2em;
+}
+
+.username {
+  grid-area: usernameInput;
+}
+
+.passwordLabel {
+  margin-left: 8%;
+  font-size: 2em;
+  grid-area: passwordLabel;
+}
+
+.password {
+  grid-area: passwordInput;
+}
+
+.loginBtn {
+  grid-area: submitLogin;
+  border: 2px solid #3dae5f;
+  border-radius: 15px;
+  background-color: transparent;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  color: #3dae5f;
+  font-size: 1.5em;
+  cursor: pointer;
+  width: 50%;
+  margin: 0 auto;
 }
