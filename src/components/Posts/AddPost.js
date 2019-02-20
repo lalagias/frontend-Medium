@@ -10,7 +10,8 @@ class AddPost extends Component {
       title: null,
       description: null,
       text: null,
-      image: null
+      image: null,
+      jwt: null
     };
   }
 
@@ -25,6 +26,28 @@ class AddPost extends Component {
 
     console.log(this.state);
 
+    // axios
+    //   .post("http://localhost:8000/api/token/", {
+    //     username: "mocca",
+    //     password: "@060296jiM!"
+    //   })
+    //   .then(function(response) {
+    //     console.log(response);
+    //     // console.log(response.data.access);
+    //     // this.setState({ jwt: response.data.access });
+    //     let JWTtoken = response.data.access;
+    //     console.log(JWTtoken);
+    //     // store the new state object in the component's state
+    //     // this.setState({ jwt: JWTtoken }, () => {
+    //     //   // only now the state was updated
+    //     //   console.log("Data is here", this.state.jwt);
+    //     // });
+    //     // // console.log(this.state.jwt);
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
+
     const post = {
       title: this.state.title,
       description: this.state.description,
@@ -32,8 +55,14 @@ class AddPost extends Component {
       image: this.state.image
     };
 
-    axios
-      .post(`http://localhost:8000/posts/`, { post })
+    axios({
+      method: "post", //you can set what request you want to be
+      url: `http://localhost:8000/posts/`,
+      data: { post },
+      headers: {
+        Authorization: "Bearer " + this.props.jwt
+      }
+    })
       .then(res => {
         console.log(res);
         console.log(res.data);

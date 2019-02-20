@@ -20,7 +20,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      posts: []
+      posts: [],
+      jwt: null
     };
   }
 
@@ -52,6 +53,28 @@ class App extends Component {
         this.setState(newState);
       })
       .catch(error => {
+        console.log(error);
+      });
+
+    axios
+      .post("http://localhost:8000/api/token/", {
+        username: "mocca",
+        password: "@060296jiM!"
+      })
+      .then(function(response) {
+        console.log(response);
+        // console.log(response.data.access);
+        // this.setState({ jwt: response.data.access });
+        let JWTtoken = response.data.access;
+        console.log(JWTtoken);
+        // store the new state object in the component's state
+        this.setState({ jwt: JWTtoken }, () => {
+          // only now the state was updated
+          console.log("Data is here", this.state.jwt);
+        });
+        // console.log(this.state.jwt);
+      })
+      .catch(function(error) {
         console.log(error);
       });
   }
@@ -118,6 +141,7 @@ class App extends Component {
               )}
             />
           </Switch>
+          <AddPost jwtToken={this.state.jwt} />
         </div>
       </Router>
     );
